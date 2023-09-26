@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, public authService: AuthService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Verifica si está en la página de inicio y actualiza showNavbar en consecuencia
+       
         this.showNavbar = event.url !== '/';
       }
     });
@@ -28,20 +28,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Comprueba si hay un usuario logado al inicializar el componente
+
     this.updateLoginStatus();
     this.authService.loginStatusChanged.subscribe(() => {
       this.updateLoginStatus();
     });
   }
 
-  // Método para actualizar el estado de inicio de sesión y el nombre del usuario
   updateLoginStatus(): void {
     this.isLoggedIn = this.authService.isLoggedInUser();
     this.loggedInUserName = this.authService.getLoggedInUserName();
   }
 
-  // Método para cerrar la sesión del usuario
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);

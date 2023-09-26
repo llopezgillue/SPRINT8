@@ -1,4 +1,3 @@
-// starship-list.component.ts
 
 import { Component, OnInit } from '@angular/core';
 import { StarwarsService } from '../../services/starwars.service';
@@ -10,13 +9,13 @@ import { StarwarsService } from '../../services/starwars.service';
   styleUrls: ['./starship-list.component.css']
 })
 export class StarshipListComponent implements OnInit {
-  starships: any[] = []; // Almacena las naves actuales
-  currentPage: number = 1; // Página actual
+  starships: any[] = [];
+  currentPage: number = 1;
 
   constructor(private StarwarsService: StarwarsService) {}
 
   ngOnInit(): void {
-    this.loadStarships(); // Llama a loadStarships() al iniciar el componente
+    this.loadStarships();
   }
 
   loadStarships(): void {
@@ -26,7 +25,7 @@ export class StarshipListComponent implements OnInit {
   }
 
   loadMore(): void {
-    this.currentPage++; // Incrementa la página actual
+    this.currentPage++; 
     this.loadStarships();
   }
 }

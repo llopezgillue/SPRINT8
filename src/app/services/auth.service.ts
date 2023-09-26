@@ -9,14 +9,12 @@ export class AuthService {
   public showOptions= true;
   errorMessage:string | null=null;
 
-
-  // Define un EventEmitter para emitir eventos de cambio de estado
   loginStatusChanged = new EventEmitter<boolean>();
 
   private registeredUsers: { username: string; password: string }[] = [];
 
   register(username: string, password: string): boolean {
-    // Verifica si el usuario ya existe
+    
     const existingUser = this.registeredUsers.find((user) => user.username === username);
 
     if (existingUser) {
@@ -24,32 +22,31 @@ export class AuthService {
       return false;
     }
 
-    // Registra al nuevo usuario
+
     this.registeredUsers.push({ username, password });
 
-    // No llames a la función login aquí
 
     return true;
   }
   login(username: string, password: string): boolean {
-    // Verifica si el usuario y la contraseña coinciden
+
     const user = this.registeredUsers.find(
       (u) => u.username === username && u.password === password
     );
 
     if (user) {
-      // Inicio de sesión exitoso
+
       this.isLoggedIn = true;
       this.loggedInUserName = username;
       this.loginStatusChanged.emit(true);
 
-      // Establecer showOptions en true cuando el usuario inicia sesión
+
       this.showOptions = true;
 
       return true;
     }
 
-    // Inicio de sesión fallido
+
     return false;
   }
 
@@ -58,7 +55,7 @@ export class AuthService {
     this.isLoggedIn = false;
     this.loggedInUserName = null;
     this.loginStatusChanged.emit(false);
-    //this.showOptions = false;
+
   }
 
   isLoggedInUser(): boolean {

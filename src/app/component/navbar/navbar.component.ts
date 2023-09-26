@@ -24,11 +24,10 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Comprueba si hay un usuario logado al inicializar el componente
+
     this.updateLoginStatus();
   }
 
-  // Método para actualizar el estado de inicio de sesión y el nombre del usuario
   updateLoginStatus(): void {
     this.isLoggedIn = this.authService.isLoggedInUser();
     this.loggedInUserName = this.authService.getLoggedInUserName();
