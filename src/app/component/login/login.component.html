@@ -1,0 +1,35 @@
+<div class="container">
+  <ng-container *ngIf="!authService.isLoggedInUser(); else loggedInContent">
+    <h2 class="login">LOGIN</h2>
+    <br>
+    <form class="form" (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username" class="mx-2">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="password" class="mx-2">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <br>
+      <button class="btn btn-primary btn-lg" type="submit">start sesion</button>
+
+      <!-- Enlace para registrarse -->
+      <div class="mt-3">
+        <a routerLink="/register">you don't have an account?</a>
+      </div>
+    </form>
+
+    <div class="text-center alert alert-danger mt-3" *ngIf="showError">
+      the information is incorrect, please try again
+    </div>
+  </ng-container>
+
+  <!-- Mensaje de bienvenida si el usuario está logado -->
+  <ng-template #loggedInContent>
+    <div class="mt-3 d-flex justify-content-center">
+     <h2 class="display-4"> Welcome, {{ authService.getLoggedInUserName() }}!</h2>
+    </div>
+  </ng-template>
+</div>

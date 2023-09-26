@@ -1,0 +1,42 @@
+.btn-primary {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.main_container a {
+  text-decoration: none;
+}
+
+.main_container ul {
+  list-style: none;
+}
+
+.main_container ul li {
+  margin-bottom: 20px;
+  width: 700px;
+  padding: 10px;
+  background-color: rgb(28, 28, 28);
+  border: 1px solid rgb(54, 53, 53);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  text-align: left; 
+}
+
+.main_container ul li a strong {
+  text-transform: uppercase;
+}
+
+.main_container ul li a {
+  color: #ffffffa9;
+}
+
+.text-center {
+  text-align: left;
+  margin-right: 0;
+}
+
+.col-lg-6 {
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}

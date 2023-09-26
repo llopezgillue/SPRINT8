@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="signup">SIGNUP</h2>
+  <br>
+  <form class="form" (ngSubmit)="register()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="username" class="mx-2">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="password" class="mx-2">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <br>
+    <button class="btn btn-primary btn-lg" type="submit">Confirm</button>
+  </form>
+
+  <!-- Mensaje de error -->
+  <div class="text-center alert alert-danger mt-3" *ngIf="authService.errorMessage">
+    {{ authService.errorMessage }}
+  </div>
+</div>

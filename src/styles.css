@@ -1,0 +1,12 @@
+html, body, app-root {
+  background-color: #000 ;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+#myTab {
+  background-color: transparent;
+  border: none;
+}
+
+

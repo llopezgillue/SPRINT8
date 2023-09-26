@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div *ngIf="starship" class="starship-details">
+    <h2>{{ starship.name }}</h2>
+    <img [src]="imageUrl " alt="Imagen de la Nave" (error)="handleImageError()">
+    <div class="details-container">
+      <div class="details-1">
+        <ul>
+          <li><strong>MODEL:</strong> {{ starship.model }}</li>
+          <li><strong>STARSHIP CLASS:</strong> {{ starship.starship_class }}</li>
+          <li><strong>MANUFACTURER:</strong> {{ starship.manufacturer }}</li>
+          <li><strong>COST:</strong> {{ starship.cost_in_credits }} CREDITS</li>
+        </ul>
+      </div>
+      <div class="details-2-and-3">
+        <ul class="details-2">
+          <li><strong>CREW:</strong> {{ starship.crew }}</li>
+          <li><strong>PASSENGER CAPACITY:</strong> {{ starship.passengers }}</li>
+          <li><strong>CARGO CAPACITY:</strong> {{ starship.cargo_capacity }} TONS</li>
+          <li><strong>CONSUMABLES:</strong> {{ starship.consumables }}</li>
+        </ul>
+        <ul class="details-3">
+          <li><strong>LENGTH:</strong> {{ starship.length }} METERS</li>
+          <li><strong>MAXIMUM ATMOSPHERING SPEED:</strong> {{ starship.max_atmosphering_speed }} KM/H</li>
+          <li><strong>HYPERDRIVE RATING:</strong> {{ starship.hyperdrive_rating }}</li>
+          <li><strong>MAXIMUM SPEED IN REALSPACE:</strong> {{ starship.MGLT }} MGLT</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!starship" class="charging-details">
+    <p>Charging starship details...</p>
+  </div>
+</div>

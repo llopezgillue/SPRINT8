@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center my-4 mb-4">
+  <img src="./assets/imagenes/titulo_starwars.jpg" alt="" class="image">
+</div>
+<div class="text-end mt-1 pt-1 ps-3 my-1">
+  <ng-container *ngIf="isLoggedIn; else loggedOutButtons">
+    <span>{{ loggedInUserName }}&nbsp;&nbsp;</span>
+    <a (click)="logout()" class="btn btn-outline-secondary">LOGOUT</a>
+  </ng-container>
+  <ng-template #loggedOutButtons>
+    <a routerLink="/login" class="btn btn-outline-secondary me-2 my-0">LOGIN</a>
+    <a routerLink="/register" class="btn btn-outline-secondary">SIGN UP</a>
+  </ng-template>
+</div>
+
+<div class="main_container mt-1 py-1">
+  <app-navbar *ngIf="!isWelcomePage"></app-navbar>
+  <br>
+  <router-outlet></router-outlet>
+</div>

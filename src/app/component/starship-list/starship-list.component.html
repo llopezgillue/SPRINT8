@@ -1,0 +1,20 @@
+<div class="main_container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <ul class="list-unstyled">
+          <li class="mb-3 mx-auto" *ngFor="let starship of starships">
+            <a [routerLink]="['/starship', starship.url.split('/').slice(-2)[0]]">
+              <strong>{{ starship.name }}</strong>
+              <br>
+              {{ starship.model }}
+            </a>
+          </li>
+        </ul>
+        <div class="text-center d-flex align-items-center justify-content-center">
+          <button class="btn btn-primary mt-3" (click)="loadMore()">see more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
