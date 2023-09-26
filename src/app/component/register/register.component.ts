@@ -11,6 +11,7 @@ export class RegisterComponent {
   password: string = '';
   isUserLoggedIn: boolean = false;
   isRegistrationFailed: boolean = false;
+  showError:boolean = false;
 
   constructor(public authService: AuthService) {}
 
