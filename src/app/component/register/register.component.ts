@@ -18,13 +18,18 @@ export class RegisterComponent {
   register(): void {
     if (this.authService.register(this.username, this.password)) {
 
-      this.isUserLoggedIn = true;
+      this.isUserLoggedIn = false;
 
       this.username = '';
       this.password = '';
+
+      console.log('registro ok')
+
     } else {
 
       this.isRegistrationFailed = true;
+
+      console.log('registro no ok')
     }
   }
 

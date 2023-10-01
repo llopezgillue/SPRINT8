@@ -19,13 +19,18 @@ export class LoginComponent {
   login(): void {
     if (this.authService.login(this.username, this.password)) {
       this.isUserLoggedIn = true;
+      
+console.log('exito')
+
     } else {
       this.isLoginFailed = true;
       this.showError = true;
+
 
       setTimeout(() => {
         this.showError = false;
       }, 2000);
     }
   }
+
 }
