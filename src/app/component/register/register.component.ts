@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Importamos Router desde '@angular/router'
+import { Router } from '@angular/router'; 
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class RegisterComponent {
   isRegistrationFailed: boolean = false;
   showError: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router) {} // Inyectamos Router aquí
+  constructor(public authService: AuthService, private router: Router) {}
 
   register(): void {
     if (this.authService.register(this.username, this.password)) {
@@ -23,8 +23,8 @@ export class RegisterComponent {
       this.password = '';
       console.log('registro ok');
 
-      // Redirigir a la página de inicio de sesión después de un registro exitoso
-      this.router.navigate(['/login']);
+
+      this.router.navigate(['/welcome']);
     } else {
       this.isRegistrationFailed = true;
       console.log('registro no ok');
