@@ -14,6 +14,8 @@ import { LoginComponent } from './component/login/login.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { RegisterComponent } from './component/register/register.component';
 import { AuthService } from './services/auth.service';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -27,13 +29,15 @@ import { AuthService } from './services/auth.service';
     WelcomeComponent,
     RegisterComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
   ],
   providers: [StarwarsService, AuthService],
   bootstrap: [AppComponent]
